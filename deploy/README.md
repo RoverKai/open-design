@@ -11,7 +11,7 @@ Before starting:
 1. Copy the environment template:
 
    ```bash
-   cp deploy/.env.example deploy/.env
+   cp .env.example .env
    ```
 
 2. Generate a secure token:
@@ -20,7 +20,7 @@ Before starting:
    openssl rand -hex 32
    ```
 
-3. Open `deploy/.env` in your editor, find `OD_API_TOKEN=`, and paste the generated token there.
+3. Open `.env` in your editor, find `OD_API_TOKEN=`, and paste the generated token there.
 
 Then pull and start the service:
 
