@@ -55,10 +55,11 @@ docker compose version
 
 From the repository root:
 
-1. Copy the environment template:
+1. Change to the deploy directory and copy the environment template:
 
    ```bash
-   cp deploy/.env.example deploy/.env
+   cd deploy
+   cp .env.example .env
    ```
 
 2. Generate a secure token:
@@ -67,7 +68,7 @@ From the repository root:
    openssl rand -hex 32
    ```
 
-3. Open `deploy/.env` in your editor, find `OD_API_TOKEN=`, and paste the generated token there.
+3. Open `.env` in your editor, find `OD_API_TOKEN=`, and paste the generated token there.
 
 Then start the service:
 
