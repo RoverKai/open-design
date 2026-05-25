@@ -338,10 +338,11 @@ docker compose version
 
 #### Start Open Design
 
-1. Change to the deploy directory and copy the environment template:
+1. Clone the repository, change to the deploy directory, and copy the environment template:
 
    ```bash
-   cd deploy
+   git clone https://github.com/nexu-io/open-design.git
+   cd open-design/deploy
    cp .env.example .env
    ```
 
