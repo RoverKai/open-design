@@ -55,8 +55,23 @@ docker compose version
 
 From the repository root:
 
+1. Copy the environment template:
+
+   ```bash
+   cp deploy/.env.example deploy/.env
+   ```
+
+2. Generate a secure token:
+
+   ```bash
+   openssl rand -hex 32
+   ```
+
+3. Open `deploy/.env` in your editor, find `OD_API_TOKEN=`, and paste the generated token there.
+
+Then start the service:
+
 ```bash
-cd deploy
 docker compose up -d
 ```
 
@@ -107,7 +122,13 @@ docker compose down -v
 
 ## Environment Configuration
 
-Create a `deploy/.env` file to override the default configuration:
+Create a `deploy/.env` file to override the default configuration. Start from the provided example:
+
+```bash
+cp deploy/.env.example deploy/.env
+```
+
+Edit `deploy/.env` to set your own token and adjust other values as needed:
 
 ```env
 # Port exposed on the host
@@ -121,6 +142,10 @@ OPEN_DESIGN_ALLOWED_ORIGINS=https://yourdomain.com
 
 # Docker image tag
 OPEN_DESIGN_IMAGE=docker.io/vanjayak/open-design:latest
+
+# Required API token for daemon security
+# Generate one with: openssl rand -hex 32
+OD_API_TOKEN=
 ```
 
 ---

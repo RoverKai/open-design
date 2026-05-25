@@ -338,9 +338,23 @@ docker compose version
 
 #### Start Open Design
 
+1. Copy the environment template:
+
+   ```bash id="o0h0a0"
+   cp deploy/.env.example deploy/.env
+   ```
+
+2. Generate a secure token:
+
+   ```bash id="o0h0b0"
+   openssl rand -hex 32
+   ```
+
+3. Open `deploy/.env` in your editor, find `OD_API_TOKEN=`, and paste the generated token there.
+
+Then start the service:
+
 ```bash id="m9w43w"
-git clone https://github.com/nexu-io/open-design.git
-cd open-design/deploy
 docker compose up -d
 ```
 
