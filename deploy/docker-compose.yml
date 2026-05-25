@@ -11,10 +11,11 @@ services:
     environment:
       NODE_ENV: production
       NODE_OPTIONS: ${NODE_OPTIONS:---max-old-space-size=192}
-      OD_BIND_HOST: 127.0.0.1
+      OD_BIND_HOST: 0.0.0.0
       OD_ALLOWED_ORIGINS: ${OPEN_DESIGN_ALLOWED_ORIGINS:-}
       OD_PORT: 7456
       OD_WEB_PORT: ${OPEN_DESIGN_PORT:-7456}
+      OD_API_TOKEN: ${OD_API_TOKEN}
     ports:
       - "127.0.0.1:${OPEN_DESIGN_PORT:-7456}:7456"
     volumes:
