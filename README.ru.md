@@ -317,6 +317,70 @@ DISCOVERY directives  (turn-1 form, turn-2 brand branch, TodoWrite, 5-dim critiq
 - **[open-design.ai](https://open-design.ai/)** — официальная страница загрузки
 - **[GitHub-релизы](https://github.com/nexu-io/open-design/releases)**
 
+### Запуск через Docker
+
+Запустите Open Design без установки Node.js или pnpm локально.
+
+#### Требования
+
+* Docker Desktop
+* Docker Compose v2
+
+Проверьте Docker:
+
+```bash id="70jv9o"
+docker compose version
+```
+
+#### Запуск Open Design
+
+1. Клонируйте репозиторий, перейдите в каталог deploy и скопируйте шаблон окружения:
+
+   ```bash
+   git clone https://github.com/nexu-io/open-design.git
+   cd open-design/deploy
+   cp .env.example .env
+   ```
+
+2. Сгенерируйте безопасный токен:
+
+   ```bash
+   openssl rand -hex 32
+   ```
+
+3. Откройте `.env` в редакторе, найдите `OD_API_TOKEN=` и вставьте сгенерированный токен.
+
+Затем запустите сервис:
+
+```bash
+docker compose up -d
+```
+
+Откройте в браузере:
+
+```text id="4s4xeh"
+http://localhost:7456
+```
+
+#### Часто используемые команды
+
+```bash id="gl95kp"
+# Просмотр логов
+docker compose logs -f
+
+# Перезапуск контейнеров
+docker compose restart
+
+# Остановка контейнеров
+docker compose down
+
+# Загрузка последнего образа
+docker compose pull
+docker compose up -d
+```
+
+Дополнительную информацию о настройке Docker и переменных окружения см. в [`QUICKSTART.ru.md`](QUICKSTART.ru.md).
+
 ### Запуск из исходников
 
 ```bash

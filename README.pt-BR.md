@@ -317,6 +317,70 @@ A maneira mais rápida de experimentar o Open Design é o aplicativo desktop pr�
 - **[open-design.ai](https://open-design.ai/)** — página oficial de downloads
 - **[Releases do GitHub](https://github.com/nexu-io/open-design/releases)**
 
+### Executar com Docker
+
+Execute o Open Design sem instalar Node.js ou pnpm localmente.
+
+#### Requisitos
+
+* Docker Desktop
+* Docker Compose v2
+
+Verifique o Docker:
+
+```bash id="70jv9o"
+docker compose version
+```
+
+#### Iniciar o Open Design
+
+1. Clone o repositório, vá para o diretório deploy e copie o modelo de ambiente:
+
+   ```bash
+   git clone https://github.com/nexu-io/open-design.git
+   cd open-design/deploy
+   cp .env.example .env
+   ```
+
+2. Gere um token seguro:
+
+   ```bash
+   openssl rand -hex 32
+   ```
+
+3. Abra o `.env` no seu editor, encontre `OD_API_TOKEN=` e cole o token gerado.
+
+Em seguida, inicie o serviço:
+
+```bash
+docker compose up -d
+```
+
+Abra no seu navegador:
+
+```text id="4s4xeh"
+http://localhost:7456
+```
+
+#### Comandos comuns
+
+```bash id="gl95kp"
+# Ver logs
+docker compose logs -f
+
+# Reiniciar contêineres
+docker compose restart
+
+# Parar contêineres
+docker compose down
+
+# Baixar a imagem mais recente
+docker compose pull
+docker compose up -d
+```
+
+Para configuração avançada do Docker e variáveis de ambiente, consulte [`QUICKSTART.pt-BR.md`](QUICKSTART.pt-BR.md).
+
 ### Executar a partir do código-fonte
 
 ```bash

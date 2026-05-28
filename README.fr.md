@@ -317,6 +317,70 @@ Le moyen le plus rapide d'essayer Open Design est l'application desktop précons
 - **[open-design.ai](https://open-design.ai/)** — page de téléchargement officielle
 - **[Releases GitHub](https://github.com/nexu-io/open-design/releases)**
 
+### Exécuter avec Docker
+
+Exécutez Open Design sans installer Node.js ou pnpm localement.
+
+#### Prérequis
+
+* Docker Desktop
+* Docker Compose v2
+
+Vérifier Docker :
+
+```bash id="70jv9o"
+docker compose version
+```
+
+#### Démarrer Open Design
+
+1. Clonez le dépôt, allez dans le répertoire deploy et copiez le modèle d'environnement :
+
+   ```bash
+   git clone https://github.com/nexu-io/open-design.git
+   cd open-design/deploy
+   cp .env.example .env
+   ```
+
+2. Générez un token sécurisé :
+
+   ```bash
+   openssl rand -hex 32
+   ```
+
+3. Ouvrez `.env` dans votre éditeur, trouvez `OD_API_TOKEN=` et collez le token généré.
+
+Lancez ensuite le service :
+
+```bash
+docker compose up -d
+```
+
+Ouvrez dans votre navigateur :
+
+```text id="4s4xeh"
+http://localhost:7456
+```
+
+#### Commandes courantes
+
+```bash id="gl95kp"
+# Voir les logs
+docker compose logs -f
+
+# Redémarrer les conteneurs
+docker compose restart
+
+# Arrêter les conteneurs
+docker compose down
+
+# Télécharger la dernière image
+docker compose pull
+docker compose up -d
+```
+
+Pour la configuration avancée de Docker et les variables d'environnement, consultez [`QUICKSTART.fr.md`](QUICKSTART.fr.md).
+
 ### Exécuter depuis les sources
 
 ```bash

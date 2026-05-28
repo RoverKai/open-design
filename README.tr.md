@@ -308,6 +308,70 @@ Open Design'ı denemenin en hızlı yolu prebuilt desktop app'tir; Node yok, pnp
 - **[open-design.ai](https://open-design.ai/)** — resmi indirme sayfası
 - **[GitHub releases](https://github.com/nexu-io/open-design/releases)**
 
+### Docker ile çalıştır
+
+Open Design'ı Node.js veya pnpm yüklemeden çalıştırın.
+
+#### Gereksinimler
+
+* Docker Desktop
+* Docker Compose v2
+
+Docker'ı doğrulayın:
+
+```bash id="70jv9o"
+docker compose version
+```
+
+#### Open Design'ı başlatın
+
+1. Depoyu klonlayın, deploy dizinine gidin ve ortam şablonunu kopyalayın:
+
+   ```bash
+   git clone https://github.com/nexu-io/open-design.git
+   cd open-design/deploy
+   cp .env.example .env
+   ```
+
+2. Güvenli bir token oluşturun:
+
+   ```bash
+   openssl rand -hex 32
+   ```
+
+3. `.env` dosyasını düzenleyicide açın, `OD_API_TOKEN=` satırını bulun ve oluşturduğunuz token'ı yapıştırın.
+
+Ardından servisi başlatın:
+
+```bash
+docker compose up -d
+```
+
+Tarayıcınızda açın:
+
+```text id="4s4xeh"
+http://localhost:7456
+```
+
+#### Sık kullanılan komutlar
+
+```bash id="gl95kp"
+# Günlükleri görüntüle
+docker compose logs -f
+
+# Konteynerları yeniden başlat
+docker compose restart
+
+# Konteynerları durdur
+docker compose down
+
+# En son imajı çek
+docker compose pull
+docker compose up -d
+```
+
+Gelişmiş Docker yapılandırması ve ortam değişkenleri için [`QUICKSTART.tr.md`](QUICKSTART.tr.md) bölümüne bakın.
+
 ### Kaynaktan çalıştır
 
 ```bash
