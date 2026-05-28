@@ -378,7 +378,7 @@ docker compose pull
 docker compose up -d
 ```
 
-고급 Docker 구성 및 환경 변수는 [`QUICKSTART.ko.md`](QUICKSTART.ko.md)를 참조하세요.
+고급 Docker 구성 및 환경 변수는 [`QUICKSTART.md`](QUICKSTART.md)를 참조하세요.
 
 ### 소스에서 실행
 

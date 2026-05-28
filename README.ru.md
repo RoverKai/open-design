@@ -379,7 +379,7 @@ docker compose pull
 docker compose up -d
 ```
 
-Дополнительную информацию о настройке Docker и переменных окружения см. в [`QUICKSTART.ru.md`](QUICKSTART.ru.md).
+Дополнительную информацию о настройке Docker и переменных окружения см. в [`QUICKSTART.md`](QUICKSTART.md).
 
 ### Запуск из исходников
 

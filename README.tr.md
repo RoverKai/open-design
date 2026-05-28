@@ -370,7 +370,7 @@ docker compose pull
 docker compose up -d
 ```
 
-Gelişmiş Docker yapılandırması ve ortam değişkenleri için [`QUICKSTART.tr.md`](QUICKSTART.tr.md) bölümüne bakın.
+Gelişmiş Docker yapılandırması ve ortam değişkenleri için [`QUICKSTART.md`](QUICKSTART.md) bölümüne bakın.
 
 ### Kaynaktan çalıştır
 

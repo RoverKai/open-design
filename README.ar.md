@@ -381,7 +381,7 @@ docker compose pull
 docker compose up -d
 ```
 
-لإعدادات Docker المتقدمة ومتغيرات البيئة، راجع [`QUICKSTART.ar.md`](QUICKSTART.ar.md).
+لإعدادات Docker المتقدمة ومتغيرات البيئة، راجع [`QUICKSTART.md`](QUICKSTART.md).
 
 ### التشغيل من المصدر
 

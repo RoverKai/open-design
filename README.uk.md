@@ -379,7 +379,7 @@ docker compose pull
 docker compose up -d
 ```
 
-Докладніше про налаштування Docker та змінні середовища див. у [`QUICKSTART.uk.md`](QUICKSTART.uk.md).
+Докладніше про налаштування Docker та змінні середовища див. у [`QUICKSTART.md`](QUICKSTART.md).
 
 ### Запуск з вихідного коду
 
